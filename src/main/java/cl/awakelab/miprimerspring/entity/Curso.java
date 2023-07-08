@@ -7,12 +7,14 @@ import java.util.List;
 @Data
 @Entity
 @Table(name="Cursos")
-public class Curso{
+public class Curso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idCurso;
     private String nombre;
 
-    @OneToMany(mappedBy = "idAlumno")
+    @OneToMany(mappedBy = "curso")
     private List<Alumno> listaAlumnos;
+    @ManyToMany(mappedBy = "listaCursos")
+    private List<Profesor> listaProfesores;
 }

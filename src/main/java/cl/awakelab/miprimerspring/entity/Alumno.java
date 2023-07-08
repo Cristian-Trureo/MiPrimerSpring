@@ -18,7 +18,7 @@ public class Alumno {
     private String direccion;
     private LocalDate fechaNacimiento;
 
-    @ManyToOne
-    @JoinColumn(name = "idCurso")
+    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "FK_Curso", nullable = false)
     private Curso curso;
 }

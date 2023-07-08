@@ -18,8 +18,8 @@ public class Profesor {
     private String apellido2;
     @ManyToMany
     @JoinTable(name = "Curso_Profesor",
-            joinColumns = @JoinColumn(name = "idProfesor"),
-            inverseJoinColumns = @JoinColumn(name = "idCurso"))
+            joinColumns = @JoinColumn(name = "FK_Profesor", nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "FK_Curso", nullable = false))
     private List<Curso> listaCursos;
 
 }
